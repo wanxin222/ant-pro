@@ -119,6 +119,12 @@ const menuData = [{
   
 },
 {
+  name: '角色管理',
+  icon: 'table',
+  path: 'role',
+  
+},
+{
   name: '账户',
   icon: 'user',
   path: 'user',

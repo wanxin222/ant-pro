@@ -1,18 +1,21 @@
-import { queryRule, removeRule, addRule } from '../services/api';
+import {queryRole, queryRule, removeRule, addRule } from '../services/api';
 
 export default {
-  namespace: 'rule',
+  namespace: 'role',
   state: {
     data: {
       list: [],
-      pagination: {},
+      pagination: {
+          current:1,
+          pageSize:10,
+          total:3
+      },
     },
   },
 
   effects: {
     *fetch({ payload }, { call, put }) {
-      const response = yield call(queryRule, payload);
-      console.log(response);
+      const response = yield call(queryRole, payload);
       yield put({
         type: 'save',
         payload: response,
